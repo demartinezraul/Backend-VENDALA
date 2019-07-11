@@ -1,9 +1,8 @@
-## Express / React Starter 
-### [AppSeed.us](https://www.appseed.us/?ref=github) - Full Stack web apps generator   
+# Laravel Boilerplate
 
-## Project Status: 
+Basic Laravel starter with JWT authentication and REST api
 
-* Under development, incomplete documentation, active suport
+--- 
 
 ## Setting up a development environment
 
@@ -46,9 +45,9 @@ Body/raw data:
 }
 ```
 
-## Trouble shooting
-
-* Support via @Github or [Facebook Group](https://www.facebook.com/groups/fullstack.apps.generator) 
+## Support
+Open a [new issue](https://github.com/app-generator/nodejs-starter/issues/new) here 
+or contact [AppSeed support](https://appseed.us/support) 
 
 ## License
-MIT
+MIT @ [AppSeed](https://appseed.us)
