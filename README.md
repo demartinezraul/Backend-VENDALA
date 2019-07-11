@@ -46,7 +46,7 @@ Body/raw data:
 ```
 
 ## Support
-Open a [new issue](https://github.com/app-generator/nodejs-starter/issues/new) here 
+Open a [new issue](https://github.com/app-generator/laravel-boilerplate/issues/new) here 
 or contact [AppSeed support](https://appseed.us/support) 
 
 ## License
