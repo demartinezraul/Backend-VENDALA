@@ -4,7 +4,7 @@ Basic [Laravel](https://laravel.com/) starter with [JWT authentication](https://
 
 <br />
 
-![Open-Source Nodejs Starter - Product image.](https://github.com/app-generator/static/blob/master/products/boilerplate-code-laravel-boilerplate-cover.jpg?raw=true) 
+![Open-Source Laravel Boilerplate - Product cover image.](https://github.com/app-generator/static/blob/master/products/boilerplate-code-laravel-boilerplate-cover.jpg?raw=true) 
 
 <br />
 
