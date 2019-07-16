@@ -26,7 +26,7 @@ JWT_SECRET=RuoxLtY4F3HvH3K0aVTkgLPTZu8IvlhJ
 
 ## Running the app
 
-* Go in the appseed/starter-laravel/public run in 
+* Go in the `public` directory 
 * Exec `php -S localhost:3000` to start the server
 * Login route: /api/users/login [post: email, password],
 * Demo credentials email: demo@appseed.us, password: demo & demo2@appseed.us, password: demo
