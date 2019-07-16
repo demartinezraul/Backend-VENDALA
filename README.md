@@ -1,8 +1,12 @@
-# Laravel Boilerplate
+# [Laravel Boilerplate](https://appseed.us/boilerplate-code/laravel-boilerplate)
 
-Basic Laravel starter with JWT authentication and REST api
+Basic [Laravel](https://laravel.com/) starter with [JWT authentication](https://jwt.io/introduction/) and REST api
 
---- 
+<br />
+
+![Open-Source Nodejs Starter - Product image.](https://github.com/app-generator/static/blob/master/products/boilerplate-code-laravel-boilerplate-cover.jpg?raw=true) 
+
+<br />
 
 ## Setting up a development environment
 
@@ -23,6 +27,8 @@ JWT_SECRET=RuoxLtY4F3HvH3K0aVTkgLPTZu8IvlhJ
 * Exec `composer install` This cmd witll install all required dependencies
 * Exec `php artisan key:generate` to trigger laravel setup
 * Exec `php artisan migrate:fresh --seed` to create tables and seed with data
+
+<br />
 
 ## Running the app
 
@@ -45,9 +51,19 @@ Body/raw data:
 }
 ```
 
+<br />
+
 ## Support
-Open a [new issue](https://github.com/app-generator/laravel-boilerplate/issues/new) here 
-or contact [AppSeed support](https://appseed.us/support) 
+
+For issues and features request, use **Github** or access the [support page](https://appseed.us/support) provided by **AppSeed** 
+
+<br />
 
 ## License
 MIT @ [AppSeed](https://appseed.us)
+
+<br />
+
+---
+[Laravel Boilerplate](https://appseed.us/boilerplate-code/laravel-boilerplate) provided by **AppSeed**
+
