@@ -1,6 +1,10 @@
 # [Laravel Boilerplate](https://appseed.us/boilerplate-code/laravel-boilerplate)
 
-Basic [Laravel](https://laravel.com/) starter with [JWT authentication](https://jwt.io/introduction/) and REST api
+Basic [Laravel](https://laravel.com/) starter with [JWT authentication](https://jwt.io/introduction/) and REST api - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
+
+<br />
+
+> Enjoy this project? **Join our efforts** to actively support the open-source ecosystem via a **[PayPal.me donation](https://paypal.me/appseed)**. Thank you!
 
 <br />
 
