@@ -1,21 +1,9 @@
-# [Laravel Boilerplate](https://appseed.us/boilerplate-code/laravel-boilerplate)
-
-Basic [Laravel](https://laravel.com/) starter with [JWT authentication](https://jwt.io/introduction/) and REST api - Provided by **AppSeed** [Web App Generator](https://appseed.us/app-generator).
-
-<br />
-
-> Enjoy this project? **Join our efforts** to actively support the open-source ecosystem via a **[PayPal.me donation](https://paypal.me/appseed)**. Thank you!
-
-<br />
-
-![Open-Source Laravel Boilerplate - Product cover image.](https://github.com/app-generator/static/blob/master/products/boilerplate-code-laravel-boilerplate-cover.jpg?raw=true) 
+# BACK-END
 
 <br />
 
 ## Setting up a development environment
 
-* clone repo: `git clone https://github.com/app-generator/laravel-starter.git`
-* change directory to laravel-starter: 
 * create a file named .env (copy .env.example file) which should contain the following default setup ( you should provide your own values to this variables ):
 ```
 DB_CONNECTION=mysql
@@ -39,7 +27,7 @@ JWT_SECRET=RuoxLtY4F3HvH3K0aVTkgLPTZu8IvlhJ
 * Go in the `public` directory 
 * Exec `php -S localhost:3000` to start the server
 * Login route: /api/users/login [post: email, password],
-* Demo credentials email: demo@appseed.us, password: demo & demo2@appseed.us, password: demo
+* Demo credentials email: admin@admin.com, password: admin
 
 Test with POSTMAN first.
 
@@ -49,25 +37,8 @@ Body/raw data:
 ```
 {
 	"user": {
-		"email": "demo2@appseed.us",
-		"password": "demo"
+		"email": "admin@admin.com",
+		"password": "admin"
 	}
 }
 ```
-
-<br />
-
-## Support
-
-For issues and features request, use **Github** or access the [support page](https://appseed.us/support) provided by **AppSeed** 
-
-<br />
-
-## License
-MIT @ [AppSeed](https://appseed.us)
-
-<br />
-
----
-[Laravel Boilerplate](https://appseed.us/boilerplate-code/laravel-boilerplate) provided by **AppSeed**
-

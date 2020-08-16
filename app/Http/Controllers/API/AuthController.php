@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use JWTAuth;
@@ -14,15 +14,8 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        $data = [
-            'name' => ( $request->user['name'] ?? 'Demo User'),
-            'email' => $request->user['email'],
-            'password' => $request->user['password'],
-        ];
 
-//        dd($validate);
-
-        $validator = Validator::make($data, [
+        $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string',
         ]);
@@ -32,9 +25,9 @@ class AuthController extends Controller
         }
 
         $user = User::create([
-            'name' => ($data['name'] ?? 'Demo User'),
-            'email'    => $data['email'],
-            'password' => $data['password'],
+            'name' => $request->name,
+            'email'    => $request->email,
+            'password' => bcrypt($request->password),
         ]);
 
         $token = $token = JWTAuth::fromUser($user);
@@ -66,17 +59,14 @@ class AuthController extends Controller
 
         return response()->json([
             'user' => [
-                '_id' => $user->id,
+                'id' => $user->id,
                 'email' => $user->email,
-                'name' => 'John',
-                'surname' => 'Doe',
+                'name' => $user->name,
                 'token' => $token,
-//                'token_type'   => 'bearer',
-//                'expires_in'   => auth('api')->factory()->getTTL() * 60,
+                'token_type'   => 'bearer',
+                'expires_in'   => auth('api')->factory()->getTTL() * 60,
             ],
         ]);
-
-        return $this->respondWithToken($token);
     }
 
     public function logout()

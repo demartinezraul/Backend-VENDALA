@@ -4,7 +4,6 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-
     /**
      * Auto generated seed file
      *
@@ -12,35 +11,32 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
-
         \DB::table('users')->delete();
-        
-        \DB::table('users')->insert(array (
-            0 => 
-            array (
-                'id' => 1,
-                'name' => 'Demo User',
-                'email' => 'demo@appseed.us',
-                'email_verified_at' => NULL,
-                'password' => '$2y$10$1GcPBEvDmbe0KM1vETtenu/PKVQKZaf1RQCQLHFuLGD3HlA37upca',
-                'remember_token' => NULL,
-                'created_at' => '2019-02-13 12:30:37',
-                'updated_at' => '2019-02-13 12:30:37',
-            ),
-            1 => 
-            array (
-                'id' => 2,
-                'name' => 'Demo User',
-                'email' => 'demo2@appseed.us',
-                'email_verified_at' => NULL,
-                'password' => '$2y$10$Z1d8.4aONwC971QEOUVTNOnqjkjXVxWGPwIkaUBq/2Z4uEHrtjN5K',
-                'remember_token' => NULL,
-                'created_at' => '2019-02-13 12:43:11',
-                'updated_at' => '2019-02-13 12:43:11',
-            ),
-        ));
-        
-        
+
+        \DB::table('users')->insert(
+            array(
+                0 =>
+                    array(
+                        'id' => 1,
+                        'name' => 'Administrador',
+                        'email' => 'admin@admin.com',
+                        'email_verified_at' => NULL,
+                        'password' => '$2y$10$hJHppZxmm7Zl3IONRDRiCO21iIIbu3mKiG.mH5Kmw68JXZ7soaihq',
+                        'remember_token' => NULL,
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ),
+                1 =>
+                    array(
+                        'id' => 2,
+                        'name' => 'Venda.la',
+                        'email' => 'vendala@vendala.com',
+                        'email_verified_at' => NULL,
+                        'password' => '$2y$10$hJHppZxmm7Zl3IONRDRiCO21iIIbu3mKiG.mH5Kmw68JXZ7soaihq',
+                        'remember_token' => NULL,
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'updated_at' => date('Y-m-d H:i:s'),
+                    ),
+            ));
     }
 }
