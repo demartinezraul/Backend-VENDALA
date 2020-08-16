@@ -14,11 +14,25 @@ use Illuminate\Http\Request;
 */
 
 Route::namespace('API')->group(function () {
-    Route::group(['middleware' => ['jwt.auth']], function () {
-        Route::get('/products', 'ProductController@index');
-    });
-
-    Route::post('/users/register', 'AuthController@register');
+//    Route::post('/users/register', 'AuthController@register');
     Route::post('/users/login', 'AuthController@login');
     Route::post('/users/logout', 'AuthController@logout');
+
+    Route::group(['middleware' => ['jwt.auth']], function () {
+
+        Route::group(['prefix'=> 'products'], function()
+        {
+            Route::get('/', 'ProductsController@index');
+            Route::post('/store', 'ProductsController@store');
+            Route::delete('/destroy/{id}', 'ProductsController@destroy');
+        });
+
+        Route::group(['prefix'=> 'kits'], function()
+        {
+            Route::get('/', 'KitsController@index');
+            Route::post('/store', 'KitsController@store');
+            Route::delete('/destroy/{id}', 'KitsController@destroy');
+
+        });
+    });
 });

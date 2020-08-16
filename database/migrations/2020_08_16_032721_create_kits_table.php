@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKitTable extends Migration
+class CreateKitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateKitTable extends Migration
      */
     public function up()
     {
-        Schema::create('kit', function (Blueprint $table) {
+        Schema::create('kits', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateKitTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kit');
+        Schema::dropIfExists('kits');
     }
 }
