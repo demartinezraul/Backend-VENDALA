@@ -22,6 +22,7 @@ JWT_SECRET=RuoxLtY4F3HvH3K0aVTkgLPTZu8IvlhJ
 * Exec `docker-compose up -d` to create containers
 * inside the application container
 * Exec `composer install` This cmd witll install all required dependencies
+* Exec `php artisan storage:link` create the symbolic link
 * Exec `php artisan key:generate` to trigger laravel setup
 * Exec `php artisan migrate:fresh --seed` to create tables and seed with data
 * Exec `php artisan categories:export` Export data from free market categories
@@ -32,6 +33,7 @@ JWT_SECRET=RuoxLtY4F3HvH3K0aVTkgLPTZu8IvlhJ
 * Go in the `public` directory 
 * Exec `php -S localhost:3000` to start the server
 * Exec `composer install` This cmd witll install all required dependencies
+* Exec `php artisan storage:link` create the symbolic link
 * Exec `php artisan key:generate` to trigger laravel setup
 * Exec `php artisan migrate:fresh --seed` to create tables and seed with data
 * Exec `php artisan categories:export` Export data from free market categories
