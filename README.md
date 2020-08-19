@@ -16,8 +16,6 @@ DB_PASSWORD=MY_DB_PASSWORD
 JWT_SECRET=RuoxLtY4F3HvH3K0aVTkgLPTZu8IvlhJ
 ```
 
-<br />
-
 ## Running the app on DOCKER
 
 * create a file named docker-compose.yml (copy docker-compose.yml.example file) which should contain the following default setup ( you should provide your own values to this variables ):
