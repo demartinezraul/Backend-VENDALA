@@ -16,10 +16,6 @@ DB_PASSWORD=MY_DB_PASSWORD
 JWT_SECRET=RuoxLtY4F3HvH3K0aVTkgLPTZu8IvlhJ
 ```
 
-* Exec `composer install` This cmd witll install all required dependencies
-* Exec `php artisan key:generate` to trigger laravel setup
-* Exec `php artisan migrate:fresh --seed` to create tables and seed with data
-
 <br />
 
 ## Running the app on DOCKER
