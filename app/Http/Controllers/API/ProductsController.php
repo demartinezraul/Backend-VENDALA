@@ -5,12 +5,9 @@ namespace App\Http\Controllers\API;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
-use Illuminate\Http\File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
