@@ -18,9 +18,14 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('price', 19,2);
-            $table->string('Category');
+            $table->unsignedInteger('category_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('category_id')
+                ->references('id')->on('categories')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
         });
     }
 

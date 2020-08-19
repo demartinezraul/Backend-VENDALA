@@ -1,7 +1,4 @@
 <?php
-
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,11 +11,14 @@ use Illuminate\Http\Request;
 */
 
 Route::namespace('API')->group(function () {
-//    Route::post('/users/register', 'AuthController@register');
     Route::post('/users/login', 'AuthController@login');
     Route::post('/users/logout', 'AuthController@logout');
 
     Route::group(['middleware' => ['jwt.auth']], function () {
+        Route::group(['prefix'=> 'categories'], function()
+        {
+            Route::get('/', 'CategoriesController@index');
+        });
 
         Route::group(['prefix'=> 'products'], function()
         {

@@ -22,15 +22,19 @@ class KitsController extends Controller
         try {
             $request->validate([
                 'name' => 'required|string|max:255',
+                'products' => 'required',
+                'products.*' => 'required'
             ]);
 
-            $kit = Kit::create($request->all());
-            if ($request->exists('products')) {
-                foreach ($request->input('products') as $produto) {
+            $kit = Kit::create([
+                'name' => $request->name
+            ]);
+            if ($request->products) {
+                foreach ($request->products as $product) {
                     KitProduct::create(
                         [
                             'kit_id' => $kit->id,
-                            'product_id' => $produto
+                            'product_id' => $product
                         ]
                     );
                 }

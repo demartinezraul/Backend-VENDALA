@@ -5,9 +5,13 @@ namespace App\Http\Controllers\API;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -19,7 +23,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(10);
+        $products = Product::with('productImages')->with('kit')->with('category')->paginate(10);
 
         return response()->json($products, 200);
     }
@@ -29,6 +33,7 @@ class ProductsController extends Controller
         try {
             $request->validate([
                 'name' => 'required|string|max:255',
+                'description' => 'required',
                 'price' => 'required',
                 'images' => 'required',
                 'images.*' => 'image|max:2048|mimes:jpeg,png,jpg'
@@ -39,18 +44,25 @@ class ProductsController extends Controller
                     'name' => $request->name,
                     'description' => $request->description,
                     'price' => $request->price,
-                    'category' => $request->category
+                    'category_id' => $request->category_id
                 ]
             );
 
             if ($request->images) {
                 foreach ($request->images as $image) {
-                    ProductImage::create(
-                        [
-                            'product_id' => $product->id,
-                            'archive' => $image
-                        ]
-                    );
+                    $baseFileName = mb_strtolower($image->getClientOriginalName());
+                    $ext = strtolower($image->getClientOriginalExtension());
+                    $filenameWithoutExt = preg_replace("~\." . $ext . "$~i", '', $baseFileName);
+                    $filename = str_slug($filenameWithoutExt) . '_' . date('YmdHis') . '.' . $ext;
+                    $imagePath = Storage::disk('local')->putFileAs('products'.'/'.$product->id, $image, $filename);
+                    if($imagePath) {
+                        ProductImage::create(
+                            [
+                                'product_id' => $product->id,
+                                'archive' => $imagePath
+                            ]
+                        );
+                    }
                 }
             }
 
