@@ -14,7 +14,7 @@ class ProductsController extends Controller
 {
 
     /**
-     * Returns all users - paginated
+     * Returns all products - paginated
      *
      * @return \Illuminate\Http\JsonResponse
      */
