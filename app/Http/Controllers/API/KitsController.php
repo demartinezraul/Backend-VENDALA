@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateKitRequest;
 use App\Models\Kit;
 use App\Models\KitProduct;
 use Illuminate\Http\Request;
@@ -17,15 +18,9 @@ class KitsController extends Controller
         return response()->json($kits, 200);
     }
 
-    public function store(Request $request)
+    public function store(CreateKitRequest $request)
     {
         try {
-            $request->validate([
-                'name' => 'required|string|max:255',
-                'products' => 'required',
-                'products.*' => 'required'
-            ]);
-
             $kit = Kit::create([
                 'name' => $request->name
             ]);
